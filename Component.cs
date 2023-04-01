@@ -13,14 +13,12 @@ namespace hardware_store
     {
         private string name;
         private double price;
-        private int quantity;
         private ComponentType type;
 
-        public Component(string name, double price, int quantity, ComponentType type)
+        public Component(string name, double price, ComponentType type)
         {
             this.name = name;
             this.price = price;
-            this.quantity = quantity;
             this.type = type;
         }
 
@@ -36,11 +34,6 @@ namespace hardware_store
             set => this.price = value;
         }
 
-        public int Quantity
-        {
-            get => this.quantity; 
-            set => this.quantity = value;
-        }
 
         public ComponentType Type
         {
@@ -49,9 +42,10 @@ namespace hardware_store
 
         public override string ToString()
         {
-            string toReturn = type + " " + name + " " + price + " " + quantity + " ";
+            string toReturn = type + " " + name + " " + price + " ";
             return toReturn;
         }
+
 
         public void Serialize(string fileName)
         {

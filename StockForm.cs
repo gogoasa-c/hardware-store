@@ -15,7 +15,11 @@ namespace hardware_store
         public StockForm(Stock currStock)
         {
             InitializeComponent();
-
+            /*foreach(Component comp in currStock.ComponentStock.Keys.ToList())
+            {
+                this.stocksListView.Items.Add(comp.Name);
+                this.stocksListView.Items[this.stocksListView.Items.Count - 1].SubItems.Add(currStock.ComponentStock[comp].ToString());
+            }*/
         }
     }
 }

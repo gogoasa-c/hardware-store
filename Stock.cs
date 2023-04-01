@@ -31,6 +31,11 @@ namespace hardware_store
             }
         }
 
+        public Dictionary<Component, int> ComponentStock
+        {
+            get => this.ComponentStock;
+        }
+
         public double TotalValue
         {
             get
@@ -38,7 +43,7 @@ namespace hardware_store
                 totalValue = 0;
                 foreach (Component component in componentStock.Keys.ToList())
                 {
-                    totalValue += component.Quantity * component.Price;
+                    totalValue += ComponentStock[component] * component.Price;
                 }
                 return totalValue;
             }

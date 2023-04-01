@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.stocksListView = new System.Windows.Forms.ListView();
             this.currStockLabel = new System.Windows.Forms.Label();
             this.itemColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,19 +37,19 @@
             this.editItemButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // stocksListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.stocksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.itemColumn,
             this.quantityColumn});
-            this.listView1.Font = new System.Drawing.Font("Cascadia Code", 8.25F);
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 76);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(440, 271);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.stocksListView.Font = new System.Drawing.Font("Cascadia Code", 8.25F);
+            this.stocksListView.HideSelection = false;
+            this.stocksListView.Location = new System.Drawing.Point(12, 76);
+            this.stocksListView.Name = "stocksListView";
+            this.stocksListView.Size = new System.Drawing.Size(440, 271);
+            this.stocksListView.TabIndex = 0;
+            this.stocksListView.UseCompatibleStateImageBehavior = false;
+            this.stocksListView.View = System.Windows.Forms.View.Details;
             // 
             // currStockLabel
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.removeItemButton);
             this.Controls.Add(this.newItemButton);
             this.Controls.Add(this.currStockLabel);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.stocksListView);
             this.Name = "StockForm";
             this.Text = "StockForm";
             this.ResumeLayout(false);
@@ -120,7 +120,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView stocksListView;
         private System.Windows.Forms.ColumnHeader itemColumn;
         private System.Windows.Forms.ColumnHeader quantityColumn;
         private System.Windows.Forms.Label currStockLabel;

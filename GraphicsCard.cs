@@ -14,7 +14,7 @@ namespace hardware_store
         private int videoMemory;
         private int bitrate;
 
-        public GraphicsCard(int videoMemory, int bitrate, string name, double price, int quantity, ComponentType type):base(name, price, quantity, type)
+        public GraphicsCard(int videoMemory, int bitrate, string name, double price, ComponentType type):base(name, price, type)
         {
             this.videoMemory = videoMemory;
             this.bitrate = bitrate;

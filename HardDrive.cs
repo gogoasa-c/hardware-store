@@ -14,7 +14,7 @@ namespace hardware_store
         private int capacity;
         private int rotationsPerMinute; // rpm
 
-        public HardDrive(int capacity, int rotationsPerMinute, string name, double price, int quantity, ComponentType type) : base(name, price, quantity, type)
+        public HardDrive(int capacity, int rotationsPerMinute, string name, double price, ComponentType type) : base(name, price, type)
         {
             this.capacity = capacity;
             this.rotationsPerMinute = rotationsPerMinute;

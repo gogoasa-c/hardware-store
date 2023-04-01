@@ -14,7 +14,7 @@ namespace hardware_store
         private int cores;
         private float frequency;
 
-        public Processor(int cores, float frequency, string name, double price, int quantity, ComponentType type):base(name, price, quantity, type)
+        public Processor(int cores, float frequency, string name, double price, ComponentType type):base(name, price, type)
         {
             this.cores = cores;
             this.frequency = frequency;

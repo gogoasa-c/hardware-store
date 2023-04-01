@@ -14,7 +14,7 @@ namespace hardware_store
         private int memory; // no. of Gb
         private int frequency; // in MHz
 
-        public RamMemory(int memory, int frequency, string name, double price, int quantity, ComponentType type):base(name, price, quantity, type)
+        public RamMemory(int memory, int frequency, string name, double price, ComponentType type):base(name, price, type)
         {
             this.memory = memory;
             this.frequency = frequency;
