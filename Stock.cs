@@ -79,6 +79,18 @@ namespace hardware_store
             
         }
 
+        public void Delete(string itemToDelete)
+        {
+            foreach(Component c in componentStock.Keys)
+            {
+                if(c.Name == itemToDelete)
+                {
+                    componentStock.Remove(c);
+                    return;
+                }
+            }
+        }
+
         public double TotalValue
         {
             get

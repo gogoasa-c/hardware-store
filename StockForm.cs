@@ -30,5 +30,26 @@ namespace hardware_store
             AddOrEditForm addForm = new AddOrEditForm("Add", currStock, stocksListView);
             addForm.Show();
         }
+
+        private void removeItemButton_Click(object sender, EventArgs e)
+        {
+            ListViewItem selectedItem = stocksListView.SelectedItems[0];
+            DialogResult result = MessageBox.Show("Are sure you wish to delete the selected item?", "Delete Item", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                // delete item from stock
+                currStock.Delete(selectedItem.Text);
+                // and also from stocksListView
+                foreach(ListViewItem item in stocksListView.Items)
+                {
+                    if (item.Text == selectedItem.Text)
+                    {
+                        stocksListView.Items.Remove(item);
+                        return;
+                    }
+                }
+            }
+            return;
+        }
     }
 }

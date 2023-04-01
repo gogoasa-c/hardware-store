@@ -53,8 +53,6 @@ namespace hardware_store
             string type = addEditButton.Text;
             if(type == "Add")
             {
-
-                
                 Component component;
                 int quantity = int.Parse(quantityTextBox.Text);
                 switch (componentTypeCombo.Text)
@@ -78,10 +76,14 @@ namespace hardware_store
                 this.currStock.AddMultipleToStock(component, quantity);
                 this.stockListView.Items.Add(component.Name);
                 this.stockListView.Items[this.stockListView.Items.Count - 1].SubItems.Add(quantity.ToString());
-
-                this.Close();
             }
+            this.Close();
 
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

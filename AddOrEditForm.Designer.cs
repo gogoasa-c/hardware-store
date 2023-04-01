@@ -41,6 +41,7 @@
             this.addEditButton = new System.Windows.Forms.Button();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.quantityLabel = new System.Windows.Forms.Label();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameTextBox
@@ -150,7 +151,7 @@
             this.addEditButton.Location = new System.Drawing.Point(148, 330);
             this.addEditButton.Name = "addEditButton";
             this.addEditButton.Size = new System.Drawing.Size(312, 54);
-            this.addEditButton.TabIndex = 10;
+            this.addEditButton.TabIndex = 6;
             this.addEditButton.Text = "button1";
             this.addEditButton.UseVisualStyleBackColor = true;
             this.addEditButton.Click += new System.EventHandler(this.addEditButton_Click);
@@ -162,7 +163,7 @@
             this.quantityTextBox.Location = new System.Drawing.Point(148, 297);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(312, 18);
-            this.quantityTextBox.TabIndex = 11;
+            this.quantityTextBox.TabIndex = 5;
             // 
             // quantityLabel
             // 
@@ -174,11 +175,22 @@
             this.quantityLabel.TabIndex = 12;
             this.quantityLabel.Text = "Quanitity:";
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(148, 390);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(312, 54);
+            this.cancelButton.TabIndex = 7;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // AddOrEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 506);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.quantityTextBox);
             this.Controls.Add(this.addEditButton);
@@ -215,5 +227,6 @@
         private System.Windows.Forms.Button addEditButton;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.Label quantityLabel;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

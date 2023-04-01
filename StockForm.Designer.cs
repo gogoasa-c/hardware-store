@@ -45,7 +45,7 @@
             this.stocksListView.Font = new System.Drawing.Font("Cascadia Code", 8.25F);
             this.stocksListView.HideSelection = false;
             this.stocksListView.Location = new System.Drawing.Point(16, 94);
-            this.stocksListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stocksListView.Margin = new System.Windows.Forms.Padding(4);
             this.stocksListView.Name = "stocksListView";
             this.stocksListView.Size = new System.Drawing.Size(585, 333);
             this.stocksListView.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             this.newItemButton.Font = new System.Drawing.Font("Cascadia Code", 9F);
             this.newItemButton.Location = new System.Drawing.Point(16, 434);
-            this.newItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.newItemButton.Name = "newItemButton";
             this.newItemButton.Size = new System.Drawing.Size(223, 43);
             this.newItemButton.TabIndex = 2;
@@ -89,18 +89,19 @@
             // 
             this.removeItemButton.Font = new System.Drawing.Font("Cascadia Code", 9F);
             this.removeItemButton.Location = new System.Drawing.Point(380, 434);
-            this.removeItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.removeItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.removeItemButton.Name = "removeItemButton";
             this.removeItemButton.Size = new System.Drawing.Size(223, 43);
             this.removeItemButton.TabIndex = 3;
             this.removeItemButton.Text = "Remove Existing Item";
             this.removeItemButton.UseVisualStyleBackColor = true;
+            this.removeItemButton.Click += new System.EventHandler(this.removeItemButton_Click);
             // 
             // editItemButton
             // 
             this.editItemButton.Font = new System.Drawing.Font("Cascadia Code", 9F);
             this.editItemButton.Location = new System.Drawing.Point(247, 434);
-            this.editItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.editItemButton.Name = "editItemButton";
             this.editItemButton.Size = new System.Drawing.Size(125, 43);
             this.editItemButton.TabIndex = 4;
@@ -117,7 +118,7 @@
             this.Controls.Add(this.newItemButton);
             this.Controls.Add(this.currStockLabel);
             this.Controls.Add(this.stocksListView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StockForm";
             this.Text = "StockForm";
             this.ResumeLayout(false);
