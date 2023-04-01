@@ -31,9 +31,52 @@ namespace hardware_store
             }
         }
 
-        public Dictionary<Component, int> ComponentStock
+        public List<Component> Keys
         {
-            get => this.ComponentStock;
+            get => componentStock.Keys.ToList();
+        }
+
+        public int GetValue(Component key)
+        {
+            if (componentStock.ContainsKey(key))
+            {
+                return componentStock[key];
+            }
+            return -1;
+        }
+
+        public void AddToStock(Component c)
+        {
+            if(componentStock.ContainsKey(c))
+            {
+                componentStock[c]++;
+                return;
+            }
+            componentStock.Add(c, 1);
+        }
+
+        public void AddMultipleToStock(Component c, int quantity)
+        {
+            if (componentStock.ContainsKey(c))
+            {
+                componentStock[c] += quantity;
+                return;
+            }
+            componentStock.Add(c, quantity);
+        }
+
+        public void RemoveFromStock(Component c, int quantity)
+        {
+            if (!componentStock.ContainsKey(c))
+            {
+                return;
+            }
+            if (componentStock[c] < quantity)
+            {
+                return;
+            }
+            componentStock[c] -= quantity;
+            
         }
 
         public double TotalValue
@@ -43,7 +86,7 @@ namespace hardware_store
                 totalValue = 0;
                 foreach (Component component in componentStock.Keys.ToList())
                 {
-                    totalValue += ComponentStock[component] * component.Price;
+                    totalValue += componentStock[component] * component.Price;
                 }
                 return totalValue;
             }

@@ -26,7 +26,8 @@ namespace hardware_store
             MessageBox.Show(gtx1050.ToString());*/
 
             Stock currentStock = Stock.Instance; // singleton stock
-            
+            currentStock.AddMultipleToStock(gtx1050, 10);
+
         }
 
         private void showStockButton_Click(object sender, EventArgs e)

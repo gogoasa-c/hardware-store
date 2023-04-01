@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.stocksListView = new System.Windows.Forms.ListView();
-            this.currStockLabel = new System.Windows.Forms.Label();
             this.itemColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.currStockLabel = new System.Windows.Forms.Label();
             this.newItemButton = new System.Windows.Forms.Button();
             this.removeItemButton = new System.Windows.Forms.Button();
             this.editItemButton = new System.Windows.Forms.Button();
@@ -44,22 +44,13 @@
             this.quantityColumn});
             this.stocksListView.Font = new System.Drawing.Font("Cascadia Code", 8.25F);
             this.stocksListView.HideSelection = false;
-            this.stocksListView.Location = new System.Drawing.Point(12, 76);
+            this.stocksListView.Location = new System.Drawing.Point(16, 94);
+            this.stocksListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stocksListView.Name = "stocksListView";
-            this.stocksListView.Size = new System.Drawing.Size(440, 271);
+            this.stocksListView.Size = new System.Drawing.Size(585, 333);
             this.stocksListView.TabIndex = 0;
             this.stocksListView.UseCompatibleStateImageBehavior = false;
             this.stocksListView.View = System.Windows.Forms.View.Details;
-            // 
-            // currStockLabel
-            // 
-            this.currStockLabel.AutoSize = true;
-            this.currStockLabel.Font = new System.Drawing.Font("Cascadia Code", 14F);
-            this.currStockLabel.Location = new System.Drawing.Point(145, 9);
-            this.currStockLabel.Name = "currStockLabel";
-            this.currStockLabel.Size = new System.Drawing.Size(155, 25);
-            this.currStockLabel.TabIndex = 1;
-            this.currStockLabel.Text = "Current Stock";
             // 
             // itemColumn
             // 
@@ -71,22 +62,36 @@
             this.quantityColumn.Text = "Quantity";
             this.quantityColumn.Width = 124;
             // 
+            // currStockLabel
+            // 
+            this.currStockLabel.AutoSize = true;
+            this.currStockLabel.Font = new System.Drawing.Font("Cascadia Code", 14F);
+            this.currStockLabel.Location = new System.Drawing.Point(193, 11);
+            this.currStockLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currStockLabel.Name = "currStockLabel";
+            this.currStockLabel.Size = new System.Drawing.Size(196, 32);
+            this.currStockLabel.TabIndex = 1;
+            this.currStockLabel.Text = "Current Stock";
+            // 
             // newItemButton
             // 
             this.newItemButton.Font = new System.Drawing.Font("Cascadia Code", 9F);
-            this.newItemButton.Location = new System.Drawing.Point(12, 353);
+            this.newItemButton.Location = new System.Drawing.Point(16, 434);
+            this.newItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newItemButton.Name = "newItemButton";
-            this.newItemButton.Size = new System.Drawing.Size(167, 35);
+            this.newItemButton.Size = new System.Drawing.Size(223, 43);
             this.newItemButton.TabIndex = 2;
             this.newItemButton.Text = "Add New Item";
             this.newItemButton.UseVisualStyleBackColor = true;
+            this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
             // 
             // removeItemButton
             // 
             this.removeItemButton.Font = new System.Drawing.Font("Cascadia Code", 9F);
-            this.removeItemButton.Location = new System.Drawing.Point(285, 353);
+            this.removeItemButton.Location = new System.Drawing.Point(380, 434);
+            this.removeItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.removeItemButton.Name = "removeItemButton";
-            this.removeItemButton.Size = new System.Drawing.Size(167, 35);
+            this.removeItemButton.Size = new System.Drawing.Size(223, 43);
             this.removeItemButton.TabIndex = 3;
             this.removeItemButton.Text = "Remove Existing Item";
             this.removeItemButton.UseVisualStyleBackColor = true;
@@ -94,23 +99,25 @@
             // editItemButton
             // 
             this.editItemButton.Font = new System.Drawing.Font("Cascadia Code", 9F);
-            this.editItemButton.Location = new System.Drawing.Point(185, 353);
+            this.editItemButton.Location = new System.Drawing.Point(247, 434);
+            this.editItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editItemButton.Name = "editItemButton";
-            this.editItemButton.Size = new System.Drawing.Size(94, 35);
+            this.editItemButton.Size = new System.Drawing.Size(125, 43);
             this.editItemButton.TabIndex = 4;
             this.editItemButton.Text = "Edit";
             this.editItemButton.UseVisualStyleBackColor = true;
             // 
             // StockForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 412);
+            this.ClientSize = new System.Drawing.Size(619, 507);
             this.Controls.Add(this.editItemButton);
             this.Controls.Add(this.removeItemButton);
             this.Controls.Add(this.newItemButton);
             this.Controls.Add(this.currStockLabel);
             this.Controls.Add(this.stocksListView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StockForm";
             this.Text = "StockForm";
             this.ResumeLayout(false);

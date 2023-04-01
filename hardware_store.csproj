@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditForm.Designer.cs">
+      <DependentUpon>AddOrEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component.cs" />
     <Compile Include="ComponentType.cs" />
     <Compile Include="Computer.cs" />
@@ -68,6 +74,9 @@
     <Compile Include="StockForm.Designer.cs">
       <DependentUpon>StockForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOrEditForm.resx">
+      <DependentUpon>AddOrEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
