@@ -29,7 +29,15 @@ namespace hardware_store
                 return totalValue;
             }
         }
-        
 
+        public override string ToString()
+        {
+            string toReturn = "";
+            foreach(Component component in componentStock.Keys.ToList())
+            {
+                toReturn += component.ToString() + " " + componentStock[component] + "\n";
+            }
+            return toReturn;
+        }
     }
 }

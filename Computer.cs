@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hardware_store
 {
+    [Serializable]
     class Computer
     {
         private Processor processor;
@@ -41,7 +42,7 @@ namespace hardware_store
         }
         public override string ToString()
         {
-            string toReturn = processor.ToString() + "\n" + graphicsCard.ToString() + "\n" + ramMemory.ToString() + "\n" + hardDrive.ToString();
+            string toReturn = processor.ToString() + " " + graphicsCard.ToString() + " " + ramMemory.ToString() + " " + hardDrive.ToString();
             return toReturn;
         }
 

@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace hardware_store
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+            GraphicsCard gtx1050 = new GraphicsCard(4, 128, "GTX 1050", 200, 10, ComponentType.GraphicsCard);
+            /*gtx1050.Serialize("test.dat");
+            GraphicsCard gtx1050Deserialized = GraphicsCard.Deserialize("test.dat");
+            MessageBox.Show(gtx1050Deserialized.ToString());*/
+            /*Component comp = gtx1050;
+            comp.Serialize("test.dat");
+            Component compDeserialized = Component.Deserialize("test.dat");
+            gtx1050 = (GraphicsCard)compDeserialized;
+            MessageBox.Show(gtx1050.ToString());*/
         }
     }
 }
