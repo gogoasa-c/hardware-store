@@ -7,14 +7,28 @@ using System.Threading.Tasks;
 
 namespace hardware_store
 {
-    public class Stock
+    // singleton class, since we'll only ever have one stock
+    public sealed class Stock // cannot inherit this class, but can instantiate it
     {
+        private static Stock instance = null;
         private Dictionary<Component, int> componentStock; // nume component + cantitate aferenta
         private double totalValue;
 
-        public Stock()
+        private Stock()
         {
             componentStock = new Dictionary<Component, int>();
+        }
+
+        public static Stock Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Stock();
+                }
+                return instance;
+            }
         }
 
         public double TotalValue
