@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace hardware_store
 {
     // singleton class, since we'll only ever have one stock
+    [Serializable]
     public sealed class Stock // cannot inherit this class, but can instantiate it
     {
         private static Stock instance = null;
         private Dictionary<Component, int> componentStock; // nume component + cantitate aferenta
         private double totalValue;
 
-        private Stock()
+        public Stock()
         {
             componentStock = new Dictionary<Component, int>();
         }
@@ -79,6 +83,24 @@ namespace hardware_store
             
         }
 
+        public int GetQuantity(Component c)
+        {
+            if (!componentStock.ContainsKey(c))
+            {
+                return -1;
+            }
+            return componentStock[c];
+        }
+
+        public void setQuantity(Component c, int quantity)
+        {
+            if (!componentStock.ContainsKey(c))
+            {
+                return;
+            }
+            componentStock[c] = quantity;
+        }
+
         public void Delete(string itemToDelete)
         {
             foreach(Component c in componentStock.Keys)
@@ -112,6 +134,23 @@ namespace hardware_store
                 toReturn += component.ToString() + " " + componentStock[component] + "\n";
             }
             return toReturn;
+        }
+
+        public void Serialize(string fileName)
+        {
+            FileStream file = new FileStream(fileName, FileMode.OpenOrCreate);
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(file, this);
+            file.Close();
+        }
+
+        public void Deserialize(string fileName)
+        {
+            FileStream file = new FileStream(fileName, FileMode.OpenOrCreate);
+            BinaryFormatter formatter = new BinaryFormatter();
+            Stock stock = (Stock)formatter.Deserialize(file);
+            this.componentStock = stock.componentStock;
+            file.Close();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace hardware_store
             {
                 this.stocksListView.Items.Add(comp.Name);
                 this.stocksListView.Items[this.stocksListView.Items.Count - 1].SubItems.Add(currStock.GetValue(comp).ToString());
+                this.stocksListView.Items[this.stocksListView.Items.Count - 1].Tag = comp;
             }
         }
 
@@ -33,6 +34,10 @@ namespace hardware_store
 
         private void removeItemButton_Click(object sender, EventArgs e)
         {
+            if(stocksListView.SelectedItems.Count != 1)
+            {
+                return;
+            }
             ListViewItem selectedItem = stocksListView.SelectedItems[0];
             DialogResult result = MessageBox.Show("Are sure you wish to delete the selected item?", "Delete Item", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
@@ -50,6 +55,27 @@ namespace hardware_store
                 }
             }
             return;
+        }
+
+        private void editItemButton_Click(object sender, EventArgs e)
+        {
+            if(stocksListView.SelectedItems.Count != 1)
+            {
+                return;
+            }
+            AddOrEditForm addOrEditForm = new AddOrEditForm("Edit", currStock, stocksListView, stocksListView.SelectedIndices[0]);
+            addOrEditForm.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currStock.Serialize("file.dat");
+            this.Close();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currStock.Serialize("file.dat");
         }
     }
 }

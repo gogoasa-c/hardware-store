@@ -12,28 +12,48 @@ namespace hardware_store
 {
     public partial class MainForm : Form
     {
+        private static Boolean enabledControls = false;
         public MainForm()
         {
             InitializeComponent();
-            GraphicsCard gtx1050 = new GraphicsCard(4, 256, "GTX 1050", 700, ComponentType.GraphicsCard);
-            /*gtx1050.Serialize("test.dat");
-            GraphicsCard gtx1050Deserialized = GraphicsCard.Deserialize("test.dat");
-            MessageBox.Show(gtx1050Deserialized.ToString());
-            *//*Component comp = gtx1050;
-            comp.Serialize("test.dat");
-            Component compDeserialized = Component.Deserialize("test.dat");
-            gtx1050 = (GraphicsCard)compDeserialized;
-            MessageBox.Show(gtx1050.ToString());*/
 
             Stock currentStock = Stock.Instance; // singleton stock
-            currentStock.AddMultipleToStock(gtx1050, 10);
 
+            currentStock.Deserialize("file.dat");
+
+            LoginForm loginForm = new LoginForm(ref welcomeLabel, ref showStockButton);
+            loginForm.Show();
+        }
+
+        public static void enableButton()
+        {
+            enabledControls = true;
+        }
+
+        public static void disableButton()
+        {
+            enabledControls = false;
+        }
+
+        public void disableControls()
+        {
+            showStockButton.Enabled = false;
         }
 
         private void showStockButton_Click(object sender, EventArgs e)
         {
             StockForm stockForm = new StockForm(Stock.Instance);
             stockForm.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            welcomeLabel.Text = "Welcome, ...";
+            LoginForm loginForm = new LoginForm(ref welcomeLabel, ref showStockButton);
+            LoginForm.userLogged = false;
+            showStockButton.Enabled = false;
+            disableButton();
+            loginForm.Show();
         }
     }
 }
