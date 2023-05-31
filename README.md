@@ -1,4 +1,4 @@
-# Hardware Store Windows Forms Application (Windows Application Programming Course Project)
+# Hardware Store Windows Forms Application
 
 This Windows Forms application is my Windows Application Programming course project. It is designed to serve as a stock management system for a hardware store, empowering administrators to efficiently manage the stock of computer components such as RAM memory, GPUs, CPUs, and HDDs. The application is written in C# using .NET Framework 4.7.2.
 
